@@ -1,0 +1,15 @@
+Usage : ./remap-oauth-creds -pass={{ansible password file}} {{config .yml file }} {{input file}} {{output file}} \+
+    [{{TrackerType}} {{ClientID || - }} {{Secret || - }}...]
+
+Input File :
+
+lines starting with # are ignores
+input file format : {{TrackerType}} {{ClientID || - }} {{Secret || - }}
+use - instead of ClientID or Secret to preserve current value
+use - instead of Inputfile to use only command line updates
+if tracker type does not match any existing a new integration is created
+(!!) uri for a new integration has to be updated manually
+
+Output File : set output to a separate file to preserve original .yml intact.
+              set output equal to original .yml to replace configs directly there
+

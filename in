@@ -1,0 +1,5 @@
+# lines starting with # are ignores
+# input file format : {{TrackerType}} {{ClientID || - }} {{Secret || - }}
+# use - instead of ClientID or Secret to preserve current value
+# if tracker type does not match any existing a new integration is created
+# (!!) uri for a new integration has to be updated manually
