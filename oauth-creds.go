@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	fmt.Println("henlo bnois")
+	fmt.Println("henlo bois")
 	var (
 		c *ConfigData
 		updates []TrackerIntegration
@@ -164,7 +164,12 @@ func ApplyUpdates (c *ConfigData, updates []TrackerIntegration, pass string) err
 			}
 			integration.URL = "#fill manually!"
 			integration.TrackerType = update.TrackerType
-			integration.RedirectURI = c.TrackerIntegrations[0].RedirectURI
+
+			if c.TrackerIntegrations != nil {
+				integration.RedirectURI = c.TrackerIntegrations[0].RedirectURI
+			} else {
+				integration.RedirectURI = "#fill manually!"
+			}
 			c.TrackerIntegrations = append(c.TrackerIntegrations, integration)
 		}
 		integration := c.TrackerIntegrations[index]
